@@ -17,7 +17,7 @@
 
 - **Authentication** - Sign up, sign in, forgot password, and reset password flows powered by Supabase Auth
 - **Dashboard** - At-a-glance stats: active subscriptions, monthly spend, trials ending soon, and duplicate trial detection
-- **Subscription management** — Add, edit, and delete subscriptions with support for multiple trial accounts per tool
+- **Subscription management** - Add, edit, and delete subscriptions with support for multiple trial accounts per tool
 - **Multiple views** - List, detail, calendar, and alerts views for your subscriptions
 - **Accounts & payment methods** - Track which accounts and cards are tied to each subscription
 - **Email reminders** - Automated email alerts before trials expire via Supabase Edge Functions and the Resend API
@@ -225,4 +225,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-<p align="center">Built with ❤️ using React + Supabase</p>
+<p align="center">Built with ❤️ </p>
