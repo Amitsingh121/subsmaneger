@@ -1,6 +1,6 @@
 # SubTrack
 
-![SubTrack Logo](public/logo.png)
+
 
 > **Never lose track of a free trial again.** SubTrack is a subscription and trial tracker SaaS web app that helps you manage all your software subscriptions, monitor free trials, and get email reminders before you're charged.
 
@@ -15,15 +15,15 @@
 
 ## Features
 
-- **Authentication** — Sign up, sign in, forgot password, and reset password flows powered by Supabase Auth
-- **Dashboard** — At-a-glance stats: active subscriptions, monthly spend, trials ending soon, and duplicate trial detection
+- **Authentication** - Sign up, sign in, forgot password, and reset password flows powered by Supabase Auth
+- **Dashboard** - At-a-glance stats: active subscriptions, monthly spend, trials ending soon, and duplicate trial detection
 - **Subscription management** — Add, edit, and delete subscriptions with support for multiple trial accounts per tool
-- **Multiple views** — List, detail, calendar, and alerts views for your subscriptions
-- **Accounts & payment methods** — Track which accounts and cards are tied to each subscription
-- **Email reminders** — Automated email alerts before trials expire via Supabase Edge Functions and the Resend API
-- **Real-time updates** — Live data sync across tabs and sessions using Supabase Realtime
-- **Dark / light theme** — System-aware theme toggle with persistent preference
-- **Row Level Security** — All database tables are protected with Supabase RLS policies so users only ever see their own data
+- **Multiple views** - List, detail, calendar, and alerts views for your subscriptions
+- **Accounts & payment methods** - Track which accounts and cards are tied to each subscription
+- **Email reminders** - Automated email alerts before trials expire via Supabase Edge Functions and the Resend API
+- **Real-time updates** - Live data sync across tabs and sessions using Supabase Realtime
+- **Dark / light theme** - System-aware theme toggle with persistent preference
+- **Row Level Security** - All database tables are protected with Supabase RLS policies so users only ever see their own data
 
 ---
 
@@ -198,7 +198,7 @@ subtrack/
 
 ## Security Notes
 
-- All database access is protected by **Row Level Security** — users can only read and write their own rows.
+- All database access is protected by **Row Level Security** - users can only read and write their own rows.
 - The Supabase **anon key** is safe to expose in the frontend; it has no elevated privileges.
 - The **service role key** (used only in the Edge Function) must never be committed or exposed to the browser.
 - Passwords entered in the "Password / Notes" field on the Add Subscription form are stored as plain text in the `notes` column. Use a password manager link rather than the actual password.
