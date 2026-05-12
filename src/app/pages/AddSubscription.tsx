@@ -550,6 +550,15 @@ export function AddSubscription() {
         if (trial.trialEndDate) {
           status = trial.trialEndDate > new Date() ? 'trial' : trial.billingCycle ? 'active' : 'expired';
         }
+        // Derive login_method from explicit user selection only.
+        // If the user clicked an OAuth provider button (selectedProvider is set), use that.
+        // If they added a linked account without leaving the provider open, use the first account's provider.
+        // Otherwise default to 'email' — never infer from email domain.
+        const loginMethod =
+          trial.selectedProvider ??
+          (trial.linkedAccounts.length > 0 ? trial.linkedAccounts[0].provider : null) ??
+          'email';
+
         return {
           user_id: user.id,
           tool_name: formData.toolName,
@@ -563,7 +572,8 @@ export function AddSubscription() {
           price: parseFloat(trial.price) || 0,
           currency: trial.currency,
           email: trial.email,
-          payment_method: trial.paymentMethod || 'Credit Card',
+          login_method: loginMethod,
+          payment_method: trial.paymentMethod || null,
           reminder_days: parseInt(trial.reminderDays) || 3,
           tags: formData.tags ? formData.tags.split(',').map(t => t.trim()).filter(Boolean) : [],
           notes: [formData.notes, trial.password ? `Password Link: ${trial.password}` : ''].filter(Boolean).join('\n') || null,

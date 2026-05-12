@@ -1,5 +1,6 @@
 export type SubscriptionStatus = 'trial' | 'active' | 'expired' | 'cancelled';
 export type PaymentMethod = 'Credit Card' | 'Debit Card' | 'PayPal' | 'UPI' | 'Virtual Card';
+export type LoginMethod = 'google' | 'github' | 'microsoft' | 'apple' | 'email';
 
 export interface Subscription {
   id: string;
@@ -14,7 +15,8 @@ export interface Subscription {
   billingCycle?: 'monthly' | 'yearly' | 'one-time';
   price: number;
   currency: string;
-  paymentMethod: PaymentMethod;
+  paymentMethod: string | null;
+  loginMethod?: string;
   reminderDays: number;
   tags: string[];
   notes: string;

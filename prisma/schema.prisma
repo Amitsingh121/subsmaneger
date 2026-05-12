@@ -26,7 +26,8 @@ model Subscription {
   billingCycle   String?
   price          Float
   currency       String
-  paymentMethod  String
+  paymentMethod  String?
+  loginMethod    String?   @default("email")
   reminderDays   Int       @default(3)
   tags           String[]
   notes          String?
